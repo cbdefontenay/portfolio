@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import Cyprien from "../../public/portrait.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div
+  class="w-full h-full grid grid-cols-1 md:grid-cols-2 mb-32 pt-6 overflow-x-hidden"
+>
+  <!-- Left Column for Text -->
+  <div class="flex items-center justify-center md:justify-start p-8">
+    <p
+      class="slideInLeft text-lg md:text-2xl lg:text-4xl text-tertiary dark:text-secondary text-center text-animation"
+    >
+      {t("presentation.header")}
+    </p>
+  </div>
+
+  <!-- Right Column for Image -->
+  <div class="flex items-center md:justify-end mx-8">
+    <Image
+      alt="cyprien de fontenay"
+      src={Cyprien}
+      height="600"
+      width="500"
+      class="slideInRight image-animation rounded-xl border dark:border-slate-100 border-slate-800 hover:shadow-md dark:hover:shadow-slate-100 hover:shadow-slate-900 mb-6"
+    />
+  </div>
+</div>
+
+<style>
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .text-animation {
+    animation: slideInLeft 2s ease-in-out;
+  }
+
+  .image-animation {
+    animation: slideInRight 1s ease-out;
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav";
+interface Props {
+  title: string;
+}
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/csharp.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="dark:bg-darkBg bg-lightBg text-gray-900 dark:text-gray-50 font-gardamondRegular"
+  >
+    <Nav client:only />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>
+
+<style is:global>
+  @font-face {
+    font-family: "gardamondRegular";
+    src: url("./fonts/EBGardamond-Regular.woff2") format("woff2");
+    font-weight: regular;
+    font-style: 400;
+  }
+
+  @font-face {
+    font-family: "gardamondMedium";
+    src: url("./fonts/EBGardamond-Medium.woff2") format("woff2");
+    font-weight: medium;
+    font-style: 500;
+  }
+
+  @font-face {
+    font-family: "gardamondBold";
+    src: url("./fonts/EBGardamond-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: 700;
+  }
+</style>

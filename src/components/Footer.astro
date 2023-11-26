@@ -1,0 +1,34 @@
+---
+import LanguagePicker from "./LanguagePicker.astro";
+---
+
+<div class="flex flex-col h-full bottom-0">
+  <div class="w-full bg-gray-800 text-white text-center">
+    <LanguagePicker />
+  </div>
+
+  <!-- transition -->
+  <div class="relative h-14 w-full pb-5 bg-gray-800">
+    <svg class="absolute h-full w-full overflow-visible">
+      <defs>
+        <linearGradient id="runes" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style={{ stopColor: "#b990db", stopOpacity: 1 }}
+          ></stop>
+          <stop offset="100%" style={{ stopColor: "#6923a3", stopOpacity: 1 }}
+          ></stop>
+        </linearGradient>
+      </defs>
+      <text
+        x="50%"
+        y="50%"
+        font-size="50"
+        fill="url(#runes)"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        class="text-sm md:text-lg"
+      >
+        &copy; 2023 NordiSaga. Tout droit réservé.
+      </text>
+    </svg>
+  </div>
+</div>
