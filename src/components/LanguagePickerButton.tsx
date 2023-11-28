@@ -17,7 +17,7 @@ const Popup: React.FC<PopupProps> = () => {
   return (
     <>
       <img
-        src="../../public/france.svg"
+        src="/france.svg"
         height="30"
         width="30"
         alt="Drapeau de la France"
