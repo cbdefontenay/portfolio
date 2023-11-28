@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import ToggleTheme from "./ToggleTheme";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LanguagePickerButton from "./LanguagePickerButton";
 
 const currentURL = new URL(window.location.href);
 const lang = getLangFromUrl(currentURL);
@@ -92,6 +93,7 @@ export default function Nav() {
             className="flex flex-col gap-24 text-lg font-gardamondMedium"
             isMobile={true}
           />
+          <LanguagePickerButton />
           <ToggleTheme />
         </motion.div>
       )}
@@ -105,6 +107,7 @@ export default function Nav() {
           className="flex gap-12 font-gardamondRegular"
           isMobile={false}
         />
+        <LanguagePickerButton />
         <ToggleTheme />
       </motion.div>
 
