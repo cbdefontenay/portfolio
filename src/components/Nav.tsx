@@ -32,7 +32,7 @@ const itemMotionDesktop = {
 };
 const navLinks = [
   { name: t("nav.home"), href: `/${lang}/`, id: 1 },
-  { name: t("nav.projects"), href: `/${lang}/projects`, id: 2 },
+  { name: t("nav.projects"), href: `/${lang}/projekte`, id: 2 },
   { name: t("nav.blog"), href: "https://nordi-saga-blog.vercel.app/", id: 3 },
   { name: t("nav.contact"), href: `/${lang}/contact`, id: 4 },
 ];

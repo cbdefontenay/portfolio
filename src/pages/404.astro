@@ -1,7 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Error">
-  <p>Une erreur est survenue!!!</p>
-</Layout>
+<div
+  class="bg-slate-500 dark:bg-black h-screen w-full flex justify-center font-bold items-center text-error font-gardamondBold
+  text-4xl"
+>
+  <p>{t("error.error")}</p>
+</div>

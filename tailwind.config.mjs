@@ -11,6 +11,10 @@ export default {
         darkBg: "#0c0c0c",
         lightBg: "#fcfbf9",
         error: "#d82111",
+        gradientfrom: "#2b5876",
+        gradientto: "#4e4376",
+        gradientfromlight: "#f6d5f7",
+        gradienttolight: "#fbe9d7",
       },
       fontFamily: {
         gardamondRegular: ["gardamondRegular", "EBGardamond-Regular"],

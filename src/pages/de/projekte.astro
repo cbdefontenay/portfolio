@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const images = [
+  {
+    url: "/projects/jorvik-viking-museum",
+    description: `${t("project.viking")}`,
+    title: "Jorvik Viking Museum",
+    imageUrl: "/jorvik.webp",
+  },
+  {
+    url: "/projects/nasa-api-deno",
+    description: `${t("project.deno")}`,
+    title: "Deno NASA API - Backend Project",
+    imageUrl: "/nasa.png",
+  },
+  {
+    url: "/projects/netflix-clone",
+    description: `${t("project.netflix")}`,
+    title: "Netflix",
+    imageUrl: "/netflix-clone.webp",
+  },
+  {
+    url: "/projects/verkauf-website",
+    description: `${t("project.commercial")}`,
+    title: "Shopping Website",
+    imageUrl: "/verkauf.webp",
+  },
+];
+---
+
+<Layout title="Projekte">
+  <div class="h-full w-full">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {
+          images.map((image) => (
+            <div class="flex flex-col items-center px-4 py-8 pt-10 mx-10">
+              <h2 class="text-lg text-gradientto dark:text-gradientfromlight font-bold hover:underline md:text-2xl mb-8 mt-5">
+                <a href={image.url} class="cursor-pointer">
+                  {image.title}
+                </a>
+              </h2>
+              <Image
+                height={500}
+                width={500}
+                src={image.imageUrl}
+                alt={image.title}
+                class="mb-5 mx-5"
+              />
+
+              <p class="text-center mt-5 text-sm md:text-xl mb-5">
+                {image.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

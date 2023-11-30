@@ -11,9 +11,11 @@ const t = useTranslations(lang);
   class="w-full h-full grid grid-cols-1 md:grid-cols-2 mb-32 pt-6 overflow-x-hidden"
 >
   <!-- Left Column for Text -->
-  <div class="flex items-center justify-center md:justify-start p-8">
+  <div
+    class="slideInLeft flex items-center justify-center ml-8 mb-6 mr-4 md:justify-start p-8 border border-transparent bg-gradient-to-r dark:from-gradientfrom dark:to-gradientto from-gradientfromlight to-gradienttolight rounded-2xl text-animation hover:shadow-md dark:hover:shadow-slate-400 shadow-black transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
+  >
     <p
-      class="slideInLeft text-lg md:text-2xl lg:text-4xl text-tertiary dark:text-secondary text-center text-animation"
+      class="text-lg md:text-2xl lg:text-4xl text-tertiary dark:text-black text-center"
     >
       {t("presentation.header")}
     </p>
@@ -26,7 +28,7 @@ const t = useTranslations(lang);
       src={Cyprien}
       height="600"
       width="500"
-      class="slideInRight image-animation rounded-xl border dark:border-slate-100 border-slate-800 hover:shadow-md dark:hover:shadow-slate-100 hover:shadow-slate-900 mb-6"
+      class="slideInRight image-animation rounded-xl border dark:border-slate-100 border-transparent hover:shadow-md dark:hover:shadow-slate-100 hover:shadow-slate-900 mb-6"
     />
   </div>
 </div>
