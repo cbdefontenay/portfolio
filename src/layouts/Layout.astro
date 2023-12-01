@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav";
 interface Props {
@@ -24,49 +25,52 @@ const { title } = Astro.props;
     class="dark:bg-darkBg bg-lightBg text-gray-900 dark:text-gray-100 font-gardamondRegular"
   >
     <Nav client:only />
+    <ViewTransitions />
     <slot />
     <Footer />
+    <script is:inline>
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+
+      if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script>
+
+    <style is:global>
+      @font-face {
+        font-family: "gardamondRegular";
+        src: url("/fonts/EBGaramond-Regular.woff2") format("woff2");
+        font-weight: normal;
+        font-style: 400;
+      }
+
+      @font-face {
+        font-family: "gardamondMedium";
+        src: url("/fonts/EBGaramond-Medium.woff2") format("woff2");
+        font-weight: medium;
+        font-style: 500;
+      }
+
+      @font-face {
+        font-family: "gardamondBold";
+        src: url("/fonts/EBGaramond-Bold.woff2") format("woff2");
+        font-weight: bold;
+        font-style: 700;
+      }
+    </style>
   </body>
 </html>
-
-<script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
-
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
-  }
-  window.localStorage.setItem("theme", theme);
-</script>
-
-<style is:global>
-  @font-face {
-    font-family: "gardamondRegular";
-    src: url("/fonts/EBGaramond-Regular.woff2") format("woff2");
-    font-weight: normal;
-    font-style: 400;
-  }
-
-  @font-face {
-    font-family: "gardamondMedium";
-    src: url("/fonts/EBGaramond-Medium.woff2") format("woff2");
-    font-weight: medium;
-    font-style: 500;
-  }
-
-  @font-face {
-    font-family: "gardamondBold";
-    src: url("/fonts/EBGaramond-Bold.woff2") format("woff2");
-    font-weight: bold;
-    font-style: 700;
-  }
-</style>

@@ -101,7 +101,7 @@ export default function Nav() {
         animate={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: 25 }}
         transition={{ delay: 0.35 }}
-        className="hidden xl:flex xl:items-center xl:justify-center xl:gap-12 xl:text-lg   "
+        className="hidden md:flex md:items-center md:justify-center md:gap-12 md:text-lg   "
       >
         <NavLinks
           className="flex gap-12 font-gardamondRegular"
@@ -117,7 +117,7 @@ export default function Nav() {
         initial={{ opacity: 0, x: 25 }}
         transition={{ delay: 0.35 }}
         onClick={() => setToggled((prevToggle) => !prevToggle)}
-        className={`burger z-50 cursor-pointer space-y-1.5 xl:hidden 
+        className={`burger z-50 cursor-pointer space-y-1.5 md:hidden 
         `}
       >
         <motion.span

@@ -1,0 +1,36 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+const header = "Website du musée des Vikings à York.";
+const description =
+  "Il s'agit du clone du véritable musée sur les Vikings de Jorvik à York en Angleterre.";
+const description2 =
+  "Ce site web a été créé avec Fresh, le framework de Deno. Fresh utilise Preact, Typescript et Deno. Pour le style j'ai utilisé Tailwind CSS, qui permet une stylisation du site plus rapide et directe. Ce clone reprend les éléments déjà accessibles dans le site originel, mais que j'ai moi-même personnalisé.";
+const description3 =
+  "Vous pouvez essayer de réserver des billets à l'avance, le système de payement étant bien évidement factice.";
+---
+
+<Layout title="Viking-Museum">
+  <div class="flex flex-col items-center mb-10 h-full text-justify mx-5">
+    <h1
+      class="font-gardamondBold text-xl md:text-2xl text-gradientto dark:text-gradientfromlight mb-7"
+    >
+      {header}
+    </h1>
+    <Image
+      width={500}
+      height={500}
+      alt="website projekt"
+      src="/jorvik.webp"
+      class="rounded-2xl"
+    />
+    <div
+      class="md:w-1/2 mt-10 text-center text-base md:text-lg dark:text-gradientfromlight"
+    >
+      <p class="my-2">{description}</p>
+      <p class="my-2">{description2}</p>
+      <p class="my-2">{description3}</p>
+    </div>
+  </div>
+</Layout>
