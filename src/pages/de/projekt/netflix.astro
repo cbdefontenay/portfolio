@@ -1,0 +1,34 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+const header = "Netflix.";
+const description =
+  "Dieser Netflix-Klon ist ein Fullstack-Projekt, das Next.Js, JavaScript und CSS für das Frontend sowie Hasura GraphQl für das Backend verwendet. Die Authentifizierung erfolgt über Magic Link, was eine ausschließlich Email-basierte Authentifizierung ermöglicht, anstatt ein Passwort zu speichern.";
+const description2 =
+  "Um zu beginnen, müssen Sie sich registrieren (alles ist sicher). Anschließend gelangen Sie auf die Startseite, die mithilfe einer YouTube-API eine Auswahl zwischen verschiedenen Arten von Videos bietet, die nach Kategorien sortiert sind. Durch Klicken auf den Like-Button wird Ihr Video automatisch zu Ihrer Liste hinzugefügt. Durch Klicken auf den Dislike-Button wird Ihr Video entfernt. Dies wird mit Hilfe von Hasura GraphQl erreicht.";
+---
+
+<Layout title="Jorvik Vikings Museum">
+  <div class="flex flex-col items-center mb-10 h-full text-justify mx-5">
+    <h1
+      class="font-gardamondBold text-xl md:text-2xl text-gradientto dark:text-gradientfromlight mb-7"
+    >
+      {header}
+    </h1>
+    <Image
+      width={500}
+      height={500}
+      alt="website projekt"
+      src="/netflix-clone.webp"
+      class="rounded-2xl"
+      transition:name="image-project"
+    />
+    <div
+      class="md:w-1/2 mt-10 text-center text-base md:text-lg dark:text-gradientfromlight"
+    >
+      <p class="my-2">{description}</p>
+      <p class="my-2">{description2}</p>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,34 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+const header = "NASA mit Deno.";
+const description =
+  "Dieses Projekt unterscheidet sich ein wenig von den anderen, da es sich um ein Backend-Projekt mit Deno und nicht mit Node.js handelt.";
+const description2 =
+  "Mit Hilfe von Vanilla HTML, CSS und JavaScript sowie Deno für das Backend können Sie dieses Projekt gerne von GitHub klonen und versuchen, Ihre nächste Weltraumreise mit SpaceX zu planen. Deno nutzt eine öffentliche API der NASA, um potenziell bewohnbare Planeten zu erfassen. Indem Sie Ihren Flug zu einem von ihnen planen, tragen Sie zur Entwicklung des Weltraums und zur wissenschaftlichen Forschung bei, die die Mission während ihrer langen Monate auf dem Planeten Ihrer Wahl verfolgen wird.";
+---
+
+<Layout title="NASA">
+  <div class="flex flex-col items-center mb-10 h-full text-justify mx-5">
+    <h1
+      class="font-gardamondBold text-xl md:text-2xl text-gradientto dark:text-gradientfromlight mb-7"
+    >
+      {header}
+    </h1>
+    <Image
+      width={500}
+      height={500}
+      alt="website projekt"
+      src="/nasa.png"
+      class="rounded-2xl"
+      transition:name="image-project"
+    />
+    <div
+      class="md:w-1/2 mt-10 text-center text-base md:text-lg dark:text-gradientfromlight"
+    >
+      <p class="my-2">{description}</p>
+      <p class="my-2">{description2}</p>
+    </div>
+  </div>
+</Layout>
