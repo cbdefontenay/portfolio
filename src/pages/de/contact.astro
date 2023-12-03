@@ -2,29 +2,57 @@
 import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 
-const email = "Konktatieren Sie mich per Email:";
-const socialMedias = "Finden Sie mich auf Social Meidas:";
+const emailContact = "Kontaktieren Sie mich per Email:";
+const socialMedias = "Finden Sie mich auf Social Medias:";
+const email = import.meta.env.EMAIL;
 ---
 
 <Layout title="Kontakt">
   <div
-    class="cursor-pointer grid grid-cols-1 md:grid-cols-2 mx-2 md:px-5 gap-4 mb-5 overflow-x-hidden py-7 font-gardamondMedium"
+    class="cursor-pointer h-full grid grid-cols-1 md:grid-cols-2 items-center justify-center md:px-10 px-5 gap-4 overflow-x-hidden py-7 font-gardamondMedium mb-24 md:mb-56 mt-20 md:ml-20"
   >
     <div
-      class="grid grid-row-1 md:grid-row-2 border dark:border-slate-50 border-slate-950 rounded-2xl p-6 bg-gradient-to-r dark:from-gradientfrom dark:to-gradientto from-gradientfromlight to-gradienttolight shadow-sm hover:shadow-slate-300 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
+      class="grid grid-row-1 md:grid-row-2 md:w-96 border dark:border-slate-50 border-slate-950 rounded-2xl p-6 bg-gradient-to-r dark:from-gradientfrom dark:to-gradientto from-gradientfromlight to-gradienttolight shadow-sm hover:shadow-slate-300 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
     >
       <Image src="/email.svg" width="50" height="50" alt="etwas" />
       <h1 class="font-bold font-gardamondBold text-xl text-[#12c0c9]"></h1>
 
-      <p class="my-2">{email}</p>
+      <p class="my-2">{emailContact}</p>
+      <a
+        href=`mailto:${email}`
+        class="hover:text-primary hover:underline cursor-pointer">{email}</a
+      >
     </div>
     <div
-      class="grid grid-row-1 md:grid-row-2 border dark:border-slate-50 border-slate-950 rounded-2xl p-6 bg-gradient-to-r dark:from-gradientfrom dark:to-gradientto from-gradientfromlight to-gradienttolight shadow-sm hover:shadow-slate-300 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
+      class="grid grid-row-1 md:grid-row-2 md:w-96 border dark:border-slate-50 border-slate-950 rounded-2xl p-6 bg-gradient-to-r dark:from-gradientfrom dark:to-gradientto from-gradientfromlight to-gradienttolight shadow-sm hover:shadow-slate-300 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
     >
       <Image src="/social.svg" width="50" height="50" alt="etwas" />
       <h1 class="font-bold font-gardamondBold text-xl text-[#12c0c9]"></h1>
 
       <p class="my-2">{socialMedias}</p>
+
+      <div class="grid grid-cols-3 mt-3">
+        <a
+          href="https://github.com/cbdefontenay?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image src="/github.svg" width="40" height="40" alt="github" /></a
+        >
+        <a
+          href="https://www.linkedin.com/in/cyprien-bourdeau-de-fontenay-28a867220/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image src="/linkedin.svg" width="40" height="40" alt="linkedin" /></a
+        >
+        <a
+          href="https://www.instagram.com/natur_dreng/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
+          target="_blank"
+          rel="noopener noreferrer"
+          ><Image src="/insta.svg" width="40" height="40" alt="instagram" /></a
+        >
+      </div>
     </div>
   </div>
 </Layout>
