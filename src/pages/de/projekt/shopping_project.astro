@@ -3,16 +3,16 @@ import Buttons from "../../../components/Buttons.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
-const header = "Website des Wikingmuseums in York.";
+const header = "Shopping.";
 const description =
-  "Klon der echten Website des Jorvik Viking Museums in York.";
+  "Diese Website ist eine kommerzielle Website und offensichtlich fiktiv. Das Ziel ist zum Beispiel, Kleidung oder Schuhe zu verkaufen.";
 const description2 =
-  "Diese Website wurde mit Fresh erstellt, dem Deno-Framework. Fresh verwendet Preact, Typescript und Deno. Für das Styling habe ich Tailwind CSS verwendet, das eine schnellere und direktere Website-Stylisierung ermöglicht. Dieser Klon enthält Elemente, die bereits auf der Originalwebsite verfügbar sind, jedoch habe ich sie selbst angepasst.";
+  "Diese Website wurde mit React und JavaScript auf Netlify bereitgestellt. Was das Styling betrifft, habe ich eine Kombination aus CSS (mit Sass) und 'JSX Styled Components' verwendet, um den erstellten Stil in mehreren anderen Komponenten wiederzuverwenden.";
 const description3 =
-  "Sie können versuchen, Tickets im Voraus zu buchen, obwohl das Zahlungssystem natürlich nicht funktionsfähig ist. ";
+  "Was den 'State' betrifft, habe ich nicht Redux oder Zustand verwendet, sondern direkt den useContext-Hook, der in React integriert ist und gute Ergebnisse liefert. Die Zahlung erfolgt über 'Stripe', aber auch hier wird keine echte Zahlung durchgeführt.";
 ---
 
-<Layout title="Viking-Museum">
+<Layout title="Shopping Website">
   <div class="flex flex-col items-center mb-10 h-full text-justify mx-5">
     <h1
       class="font-gardamondBold text-xl md:text-2xl text-gradientto dark:text-gradientfromlight mb-7"
@@ -22,8 +22,8 @@ const description3 =
     <Image
       width={500}
       height={500}
-      alt="website projekt"
-      src="/jorvik.webp"
+      alt="website project"
+      src="/verkauf.webp"
       class="rounded-2xl"
       transition:name="image-project"
     />
@@ -38,11 +38,11 @@ const description3 =
     <div>
       <Buttons
         feature="Github"
-        redirect="https://github.com/cbdefontenay/Viking-Museum"
+        redirect="https://github.com/cbdefontenay/Verkauf-Website"
       />
       <Buttons
         feature="Live"
-        redirect="https://jorvik-viking-museum.deno.dev/"
+        redirect="https://crown-verkauf-website.netlify.app/"
       />
     </div>
   </div>

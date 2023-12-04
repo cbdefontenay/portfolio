@@ -1,4 +1,5 @@
 ---
+import Buttons from "../../../components/Buttons.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
@@ -29,6 +30,17 @@ const description2 =
     >
       <p class="my-2">{description}</p>
       <p class="my-2">{description2}</p>
+    </div>
+
+    <div>
+      <Buttons
+        feature="Github"
+        redirect="https://github.com/cbdefontenay/netflix"
+      />
+      <Buttons
+        feature="Live"
+        redirect="https://netflix-with-magic.vercel.app/"
+      />
     </div>
   </div>
 </Layout>

@@ -1,4 +1,5 @@
 ---
+import Buttons from "../../../components/Buttons.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
@@ -31,6 +32,17 @@ const description3 =
       <p class="my-2">{description}</p>
       <p class="my-2">{description2}</p>
       <p class="my-2">{description3}</p>
+    </div>
+
+    <div>
+      <Buttons
+        feature="Github"
+        redirect="https://github.com/cbdefontenay/Viking-Museum"
+      />
+      <Buttons
+        feature="Live"
+        redirect="https://jorvik-viking-museum.deno.dev/"
+      />
     </div>
   </div>
 </Layout>

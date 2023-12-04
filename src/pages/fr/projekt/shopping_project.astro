@@ -3,11 +3,13 @@ import Buttons from "../../../components/Buttons.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
-const header = "Netflix.";
+const header = "Shopping.";
 const description =
-  "Ce clone de Netflix est un projet fullstack qui utilise Next.Js, JavaScript et CSS pour le frontend, ainsi que Hasura GraphQl pour le backend. L'authentification se fait grâce à Magic Link, ce qui permet une authentification par email uniquement, plutôt que d'enregistrer un mot de passe.";
+  "Ce site web est un site commercial, et bien évidemment factice. Le but étant de vendre des vêtements par exemple, ou des chaussures.";
 const description2 =
   "Pour commencer il faudra vous enregistrer (tout est sécurisé). Ensuite vous tomberez sur la page d'accueil qui, grâce à un API de YouTube, vous donnera le choix entre plusieurs types de vidéos, rangées selon certaines catégories. En cliquant sur le pouce Like, votre vidéo sera automatiquement ajoutée à votre liste. En cliquant sur le pouce Dislike, votre vidéo en sera retirée. Cela est réalisé grâce à Hasura GraphQl.";
+const description3 =
+  "Quant au 'State', je n'ai pas utilisé Redux ou Zustand, mais directement le hook useContext, directement intégré à React, et qui permet un bon résultat. Le payement est perpétré par 'Stripe', mais encore une fois, aucun payement réel n'est organisé.";
 ---
 
 <Layout title="Shopping Website">
@@ -20,8 +22,8 @@ const description2 =
     <Image
       width={500}
       height={500}
-      alt="website project"
-      src="/verkauf.webp"
+      alt="website projekt"
+      src="/netflix-clone.webp"
       class="rounded-2xl"
       transition:name="image-project"
     />
@@ -30,16 +32,17 @@ const description2 =
     >
       <p class="my-2">{description}</p>
       <p class="my-2">{description2}</p>
+      <p class="my-2">{description3}</p>
     </div>
 
     <div>
       <Buttons
         feature="Github"
-        redirect="https://github.com/cbdefontenay/netflix"
+        redirect="https://github.com/cbdefontenay/Verkauf-Website"
       />
       <Buttons
         feature="Live"
-        redirect="https://netflix-with-magic.vercel.app/"
+        redirect="https://crown-verkauf-website.netlify.app/"
       />
     </div>
   </div>

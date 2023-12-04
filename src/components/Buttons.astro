@@ -1,0 +1,14 @@
+---
+interface Props {
+  feature: string;
+  redirect: string;
+}
+
+const { feature, redirect } = Astro.props;
+---
+
+<button
+  class="rounded-2xl bg-gradientfrom text-slate-200 dark:bg-gradientfromlight dark:text-slate-900 font-gardamondBold font-extrabold px-5 py-2 mt-5 ml-4"
+  ><a href=`${redirect}` target="_blank" rel="noopener noreferrer">{feature}</a
+  ></button
+>
